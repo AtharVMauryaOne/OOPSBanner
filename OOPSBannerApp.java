@@ -1,8 +1,15 @@
-public class OOPSBannerApp {
+public class BannerUC4 {
 
     public static void main(String[] args) {
-
-    System.out.println("OOPS");
+        String[] banner = {
+            "***************",
+            "*             *",
+            "*   WELCOME   *",
+            "*             *",
+            "***************"
+        };
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
-
 }
