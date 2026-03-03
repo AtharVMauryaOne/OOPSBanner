@@ -1,0 +1,21 @@
+public class OOPSBannerApp {
+
+    public static void main(String[] args) {
+
+        // Array declaration + initialization in single statement
+        String[] banner = {
+                String.join("", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*"),
+                String.join("", "*", " ", " ", "WELCOME TO OOPS", " ", " ", "*"),
+                String.join("", "*", " ", "LEARNING JAVA PROGRAMMING", " ", "*"),
+                String.join("", "*", " ", "UC5 - ARRAY INITIALIZATION", " ", "*"),
+                String.join("", "*", " ", "USING STRING.JOIN()", " ", "*"),
+                String.join("", "*", " ", "ENHANCED FOR LOOP DEMO", " ", "*"),
+                String.join("", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*")
+        };
+
+        // Enhanced for loop to print banner
+        for (String line : banner) {
+            System.out.println(line);
+        }
+    }
+}
