@@ -1,53 +1,63 @@
-public class OOPSBannerApp {
+import java.util.HashMap;
+import java.util.Map;
 
-    public static void main(String[] args) {
+public class OOPSBanner {
 
-        String[] o = generateO();
-        String[] p = generateP();
-        String[] s = generateS();
+    // HashMap to store character patterns
+    static Map<Character, String[]> patternMap = new HashMap<>();
 
-        // Loop-based rendering
-        for (int i = 0; i < o.length; i++) {
-            System.out.println(o[i] + "  " + p[i] + "  " + s[i]);
-        }
-    }
+    // Method to load patterns
+    public static void loadPatterns() {
 
-    // Static helper method for O
-    public static String[] generateO() {
-        return new String[]{
+        patternMap.put('O', new String[]{
                 " ***** ",
-                "*     *",
-                "*     *",
                 "*     *",
                 "*     *",
                 "*     *",
                 " ***** "
-        };
-    }
+        });
 
-    // Static helper method for P
-    public static String[] generateP() {
-        return new String[]{
+        patternMap.put('P', new String[]{
                 "****** ",
                 "*     *",
-                "*     *",
                 "****** ",
-                "*      ",
                 "*      ",
                 "*      "
-        };
-    }
+        });
 
-    // Static helper method for S
-    public static String[] generateS() {
-        return new String[]{
+        patternMap.put('S', new String[]{
                 " ***** ",
-                "*     *",
                 "*      ",
                 " ***** ",
                 "      *",
-                "*     *",
                 " ***** "
-        };
+        });
+    }
+
+    // Method to print banner
+    public static void printBanner(String word) {
+
+        int height = 5;
+
+        for (int i = 0; i < height; i++) {
+
+            for (char ch : word.toCharArray()) {
+
+                String[] pattern = patternMap.get(ch);
+
+                if (pattern != null) {
+                    System.out.print(pattern[i] + "  ");
+                }
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+
+        loadPatterns();
+
+        printBanner("OOPS");
     }
 }
